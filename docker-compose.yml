@@ -32,9 +32,12 @@ services:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: nestjs_demo
     ports:
-      - "3307:3306"
+      - "3307:3306"  # Expose MySQL port 3306 to host port 3307
     volumes:
       - db_data:/var/lib/mysql
-
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
 volumes:
   db_data:

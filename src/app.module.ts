@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './modules/users/users.module';
 import { ProductModule } from './modules/product/product.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { ProductModule } from './modules/product/product.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
+    AppModule,
     UsersModule,
     ProductModule,
   ],

@@ -16,7 +16,7 @@ import { AuthModule } from './modules/auth/auth.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    AppModule,
+    //AuthModule,
     UsersModule,
     ProductModule,
   ],
